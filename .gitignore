@@ -1,8 +1,8 @@
 .vscode
 config.yml
-orders.sql
 __pycache__
 build
 dist
 main.spec
+
 
