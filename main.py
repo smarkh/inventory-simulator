@@ -12,8 +12,8 @@ with open(r'config.yml') as file:
         config = yaml.load(file, Loader=yaml.FullLoader)
 
 params = urllib.parse.quote_plus('DRIVER={ODBC Driver 17 for SQL Server};'
-                 f'SERVER=gp-server;'
-                 f'DATABASE=blend;'
+                 f'SERVER={config["server_info"]["server"]};'
+                 f'DATABASE={config["server_info"]["database"]};'
                  'Trusted_Connection=yes;')
 engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % params) 
 
